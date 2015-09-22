@@ -2,4 +2,27 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="movies_grid_image_padding">3dp</dimen>
+    <dimen name="movies_grid_image_height">250dp</dimen>
+    <dimen name="detail_fragment_backdrop_img_height">200dp</dimen>
+    <dimen name="detail_fragment_movie_title_bottom_padding">5dp</dimen>
+    <dimen name="detail_fragment_movie_title_top_padding">5dp</dimen>
+    <dimen name="detail_fragment_movie_title_left_padding">10dp</dimen>
+    <dimen name="font_18">18sp</dimen>
+    <dimen name="detail_fragment_movie_release_date_right_padding">10dp</dimen>
+    <dimen name="detail_fragment_overview_bottom_padding">10dp</dimen>
+    <dimen name="detail_fragment_overview_left_padding">5dp</dimen>
+    <dimen name="detail_fragment_overview_right_padding">5dp</dimen>
+    <dimen name="detail_fragment_overview_top_padding">10dp</dimen>
+    <dimen name="font_16">16sp</dimen>
+    <dimen name="detail_fragment_bottom_padding">10dp</dimen>
+    <dimen name="detail_fragment_poster_left_padding">10dp</dimen>
+    <dimen name="detail_fragment_padding_btw_poster_rating">20dp</dimen>
+    <dimen name="detail_fragment_rating_popularity_dimen">50dp</dimen>
+    <dimen name="detail_fragment_padding_btw_star_rating">10dp</dimen>
+    <dimen name="font_20">20sp</dimen>
+    <dimen name="font_15">15sp</dimen>
+    <dimen name="detail_fragment_padding_btw_rating_popularity">10dp</dimen>
+    <dimen name="font_22">22sp</dimen>
+    <dimen name="detail_fragment_popularity_value_padding">5dp</dimen>
 </resources>

@@ -7,8 +7,8 @@
     <ImageView
         android:id="@+id/thumbnail"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="@dimen/movies_grid_image_height"
         android:scaleType="fitXY"
-        android:padding="3dp"/>
+        android:padding="@dimen/movies_grid_image_padding"/>
 
 </RelativeLayout>

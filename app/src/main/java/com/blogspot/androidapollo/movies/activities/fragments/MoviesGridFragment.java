@@ -41,13 +41,13 @@ public class MoviesGridFragment extends BaseFragment implements View.OnClickList
 
     @Bind(R.id.recycler_view)
     RecyclerView recyclerView;
-    RecyclerView.LayoutManager layoutManager;
-    RecyclerView.Adapter adapter;
-    static final String TAG = MoviesGridFragment.class.getSimpleName();
-    View rootView;
-    int itemSelected = -1;
-    String USER_OPTION_SELECTED = "user_option_selected";
-    MenuItem menuItem;
+    private RecyclerView.LayoutManager layoutManager;
+    private RecyclerView.Adapter adapter;
+    private static final String TAG = MoviesGridFragment.class.getSimpleName();
+    private View rootView;
+    private int itemSelected = -1;
+    private String USER_OPTION_SELECTED = "user_option_selected";
+    private MenuItem menuItem;
 
     public MoviesGridFragment() {
     }
@@ -134,6 +134,7 @@ public class MoviesGridFragment extends BaseFragment implements View.OnClickList
     }
 
     private void updateUIForPopularFirst() {
+        showProgressDialog();
         RestAdapter restAdapter = new RestAdapter.Builder()
                 .setEndpoint(Constants.MOVIESDB_BASE_URL)
                 .build();
@@ -141,6 +142,7 @@ public class MoviesGridFragment extends BaseFragment implements View.OnClickList
         Callback callback = new Callback() {
             @Override
             public void success(Object o, Response response) {
+                hideProgressDialog();
                 MoviesMasterList moviesList = (MoviesMasterList) o;
                 List<MoviesMasterData> data = moviesList.getResults();
                 adapter = new MoviesListingAdapter(getActivity(), data);
@@ -149,6 +151,7 @@ public class MoviesGridFragment extends BaseFragment implements View.OnClickList
 
             @Override
             public void failure(RetrofitError error) {
+                hideProgressDialog();
                 MoviesApplication.getInstance().showToast("Error connecting to moviesDB api");
                 Log.e(TAG, "Caught retrofit exception : " + error.getMessage());
             }
@@ -157,6 +160,7 @@ public class MoviesGridFragment extends BaseFragment implements View.OnClickList
     }
 
     private void updateUIForHighestRatedFirst() {
+        showProgressDialog();
         RestAdapter restAdapter = new RestAdapter.Builder()
                 .setEndpoint(Constants.MOVIESDB_BASE_URL)
                 .build();
@@ -164,6 +168,7 @@ public class MoviesGridFragment extends BaseFragment implements View.OnClickList
         Callback callback = new Callback() {
             @Override
             public void success(Object o, Response response) {
+                hideProgressDialog();
                 MoviesMasterList moviesList = (MoviesMasterList) o;
                 List<MoviesMasterData> data = moviesList.getResults();
                 adapter = new MoviesListingAdapter(getActivity(), data);
@@ -172,6 +177,7 @@ public class MoviesGridFragment extends BaseFragment implements View.OnClickList
 
             @Override
             public void failure(RetrofitError error) {
+                hideProgressDialog();
                 MoviesApplication.getInstance().showToast("Error connecting to moviesDB api");
                 Log.e(TAG, "Caught retrofit exception : " + error.getMessage());
             }
@@ -180,6 +186,7 @@ public class MoviesGridFragment extends BaseFragment implements View.OnClickList
     }
 
     private void updateUIForLatestMovies() {
+        showProgressDialog();
         RestAdapter restAdapter = new RestAdapter.Builder()
                 .setEndpoint(Constants.MOVIESDB_BASE_URL)
                 .build();
@@ -187,6 +194,7 @@ public class MoviesGridFragment extends BaseFragment implements View.OnClickList
         Callback callback = new Callback() {
             @Override
             public void success(Object o, Response response) {
+                hideProgressDialog();
                 MoviesMasterList moviesList = (MoviesMasterList) o;
                 List<MoviesMasterData> data = moviesList.getResults();
                 adapter = new MoviesListingAdapter(getActivity(), data);
@@ -195,6 +203,7 @@ public class MoviesGridFragment extends BaseFragment implements View.OnClickList
 
             @Override
             public void failure(RetrofitError error) {
+                hideProgressDialog();
                 MoviesApplication.getInstance().showToast("Error connecting to moviesDB api");
                 Log.e(TAG, "Caught retrofit exception : " + error.getMessage());
             }

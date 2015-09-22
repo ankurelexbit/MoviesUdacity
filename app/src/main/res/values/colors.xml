@@ -2,4 +2,8 @@
 <resources>
     <color name="primary">#795548</color>
     <color name="primary_dark">#5D4037</color>
+    <color name="brown">#5d4037</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="dark_fluorescent_green">#64dd17</color>
 </resources>

@@ -4,10 +4,10 @@
     <group android:checkableBehavior="single">
         <item android:id="@+id/popular_first_menu"
             android:checked="true"
-            android:title="Popular First"/>
+            android:title="@string/popular_first_label"/>
         <item android:id="@+id/highest_rated_first_menu"
-            android:title="Highest Rated First" />
+            android:title="@string/highest_rated_first_label" />
         <item android:id="@+id/latest_first_menu"
-            android:title="Latest First" />
+            android:title="@string/latest_first_label" />
     </group>
 </menu>

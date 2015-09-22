@@ -30,4 +30,13 @@ public class LandingActivity extends AppCompatActivity {
             fragmentManager.beginTransaction().replace(R.id.fragment, fragment).addToBackStack(null).commit();
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        if (fragmentManager.getBackStackEntryCount() == 1) {
+            this.finish();
+        } else {
+            fragmentManager.popBackStack();
+        }
+    }
 }
